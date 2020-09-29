@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  elk:
+    image: "elasticsearch:7.9.2"
+    ports:
+      - 9300:9300
+      - 9200:9200
+    command:
+      - mkdir -p /tmp/tgs/
+      - touch /tmp/tgs/{logs, data}
+    container_name: elk_
+#    volumes:
+#      -   elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+#    environment:
+#        - es.enforce.bootstrap.checks=true
